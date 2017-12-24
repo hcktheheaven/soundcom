@@ -3,49 +3,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:background="#d4d4d4"
     tools:context="org.scorelab.soundcom.MainActivity">
-<!--img btn-->
-    <ImageButton
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:id="@+id/button1"
-        android:background="@drawable/oval"
-        android:src="@drawable/ic_record"
-        android:layout_alignParentBottom="true"
+    <com.john.waveview.WaveView
+        android:id="@+id/wave_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#d4d4d4"
+        app:above_wave_color="@android:color/white"
+        app:blow_wave_color="@android:color/white"
+        app:progress="58"
+        app:wave_height="large"
+        app:wave_hz="fast"
+        app:wave_length="middle" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="S  O  U  N  D  C  O  M"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#673AB7"
+        android:gravity="center"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="startMethod"/>
+        android:layout_marginTop="10dp" />
 
-    <ImageButton
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:id="@+id/imageButtonStop"
-        android:background="@drawable/oval"
-        android:src="@mipmap/ic_stop"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RECORDING TIME"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="42dp"
+        android:textColor="#808080"
+        android:gravity="center"
 
-    <ImageButton
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:id="@+id/imageButtonPlay"
-        android:background="@drawable/oval"
-        android:src="@mipmap/ic_playnew"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TAP MIC TO START"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-light"
+
+        android:textColor="#414141"
+        android:gravity="center"
+
+
+        android:layout_marginBottom="90dp"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ImageView
-        android:layout_width="1000dp"
-        android:layout_height="500dp"
-        android:id="@+id/imageViewScore"
-        android:src="@mipmap/ic_scorelab"
-        android:layout_marginBottom="203dp"
-        android:layout_above="@+id/imageButtonStart"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/button1"
+        android:src="@drawable/mic"
+        android:onClick="startMethod"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:textColor="#b6b6b6"
+        android:gravity="center"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:gravity="center"
+        android:id="@+id/linearLayout2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STOP"
+            android:theme="@style/PrimaryFlatButton"
+            android:id="@+id/imageButtonStop"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PLAY"
+            android:theme="@style/PrimaryFlatButton"
+
+            android:id="@+id/imageButtonPlay"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+    </LinearLayout>
+
+
 </RelativeLayout>
