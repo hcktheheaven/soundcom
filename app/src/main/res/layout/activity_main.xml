@@ -71,7 +71,7 @@
         android:layout_height="100dp"
         android:id="@+id/button1"
        <!--android:src="@drawable/mic"-->
-        android:src="@drawable/micophone"
+        android:src="@drawable/microphone"
         android:onClick="startMethod"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
