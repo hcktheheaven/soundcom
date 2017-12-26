@@ -1,45 +1,38 @@
 package org.scorelab.soundcom;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 
 public class splash extends AppCompatActivity {
+
+    // Splash screen timer
+    private static int TIME_OUT = 4000;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
-        new DelayTask().execute(); // This will delay the spalsh scrren and redierct to the login/register screen based
-        //on the ststus of the user.
 
-    }
+        new Handler().postDelayed(new Runnable() {
 
-    class DelayTask extends AsyncTask<Void,Void,Void>{
+            /*
+			 * Showing splash screen with a timer.
+             */
 
-        @Override
-        protected Void doInBackground(Void... params) {
-            try {
-                Thread.sleep(4000);
-            }
-            catch (Exception e){
-
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-
-                Intent i =new Intent(splash.this, MainActivity.class);
+            @Override
+            public void run() {
+                // This method will be executed once the timer is over
+                // Start app main activity
+                Intent i = new Intent(splash.this, MainActivity.class);
                 startActivity(i);
 
-
-
-
-        }
+                // Close activity
+                finish();
+            }
+        }, TIME_OUT);
     }
 }
